@@ -89,20 +89,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.1666666666667 300,107.166666666667 240,107.166666666667 240,77.1666666666667 130,77.1666666666667 130,105.333333333333</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.1666666666667 300,127.166666666667</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID0</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep>
+    <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.166666666667</av:Point>
           <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Merge two excels" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Merge two excels" sap:VirtualizedContainerService.HintSize="376,507.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dt_Input2" />
           <Variable x:TypeArguments="sd:DataTable" Name="dt_Input1" />
@@ -246,25 +246,65 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <Sequence DisplayName="With LinQ" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="With LinQ" sap:VirtualizedContainerService.HintSize="376,985.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower=&quot;yes&quot; )).ToList()&#xA;Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower&lt;&gt;&quot;yes&quot; )).ToList()&#xA;Dt2.AsEnumerable().Append(Function(row) Dt1.AsEnumerable)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
-            <ui:InvokeCode.Arguments>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt1">[dt_Input1]</InArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt2">[dt_Input2]</InArgument>
-            </ui:InvokeCode.Arguments>
-          </ui:InvokeCode>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower=&quot;yes&quot; )).ToList().ForEach(Sub(row) row(&quot;Remarks&quot;)= &quot;Completed&quot;)&#xA;Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower&lt;&gt;&quot;yes&quot; )).ToList().ForEach(Sub(row) row(&quot;Remarks&quot;)= &quot;Queued&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
-            <ui:InvokeCode.Arguments>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt1">[dt_Input1]</InArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt2">[dt_Input2]</InArgument>
-            </ui:InvokeCode.Arguments>
-          </ui:InvokeCode>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,460" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower=&quot;yes&quot; )).ToList()&#xD;&#xA;Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower&lt;&gt;&quot;yes&quot; )).ToList().ForEach(Sub(row) row(&quot;Remarks&quot;)= &quot;Queued&quot;)&#xD;&#xA;Dt2.AsEnumerable.ToList(Function(row) Dt1)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt1">[dt_Input1]</InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt2">[dt_Input2]</InArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower=&quot;yes&quot; )).ToList().ForEach(Sub(row) row(&quot;Remarks&quot;)= &quot;Completed&quot;)&#xA;Dt2.AsEnumerable().Where(Function(row) Dt1.AsEnumerable.Any(Function(x) x(&quot;Client ID&quot;).ToString=row(&quot;Client ID&quot;).ToString  And x(&quot;Flag&quot;).ToString.ToLower&lt;&gt;&quot;yes&quot; )).ToList().ForEach(Sub(row) row(&quot;Remarks&quot;)= &quot;Queued&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt1">[dt_Input1]</InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt2">[dt_Input2]</InArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <ui:JoinDataTables DataTable1="[dt_Input1]" DataTable2="[dt_Input2]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[dt_Input2]">
+            <ui:JoinDataTables.Arguments>
+              <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                  <ui:JoinOperationArgument.Column1>
+                    <InArgument x:TypeArguments="x:String">["Client ID"]</InArgument>
+                  </ui:JoinOperationArgument.Column1>
+                  <ui:JoinOperationArgument.Column2>
+                    <InArgument x:TypeArguments="x:String">["Client ID"]</InArgument>
+                  </ui:JoinOperationArgument.Column2>
+                </ui:JoinOperationArgument>
+              </scg:List>
+            </ui:JoinDataTables.Arguments>
+          </ui:JoinDataTables>
+          <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[dt_Input2.Columns("Flag").ColumnName]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Remark</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Client ID_1" DataTable="[dt_Input2]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
           <ui:OutputDataTable DataTable="[dt_Input2]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strDt2]" />
           <ui:WriteRange AddHeaders="True" DataTable="[dt_Input2]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="BotOutput" WorkbookPath="Sample2.xlsx">
             <ui:WriteRange.StartingCell>
@@ -277,7 +317,7 @@
         </Sequence>
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID0">
+    <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">30,105.333333333333</av:Point>
